@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Google Sans Flex", "Google Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-fendi: #A39081;
+  --color-brown-dark: #8B735B;
+  --color-pastel-yellow: #FEF9E7;
+  --color-pastel-blue: #EBF5FB;
+  --color-sand: #F5E6D3;
+}
+
+body {
+  @apply font-sans bg-pastel-yellow text-brown-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+.serif {
+  @apply font-sans;
+}
+
+/* Remove a "barrinha" de texto (caret) que aparece ao clicar */
+* {
+  cursor: default !important;
+  caret-color: transparent !important;
+}
+
+/* Restaura o cursor de clique para links e botões */
+a, 
+button,
+[role="button"] {
+  cursor: pointer !important;
+}
+
+/* Restaura o cursor de texto e a barrinha piscante apenas para campos de entrada */
+input,
+textarea {
+  @apply select-text;
+  cursor: text !important;
+  caret-color: auto !important;
+}
+
+/* Garante que o texto ainda possa ser selecionado e copiado */
+::selection {
+  background-color: rgba(139, 115, 91, 0.2); /* brown-dark com opacidade */
+}
